@@ -1272,6 +1272,94 @@ button {
     }
 }
 
+/* =========================================================
+   FLOATING HEARTS
+========================================================= */
+.floating-hearts {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.floating-hearts span {
+    position: absolute;
+    bottom: -40px;
+
+    color: rgba(170, 35, 95, 0.35);
+    font-size: 28px;
+
+    animation: floatHeart linear infinite;
+}
+
+.floating-hearts span:nth-child(1) {
+    left: 12%;
+    animation-duration: 12s;
+    animation-delay: 2s;
+}
+
+.floating-hearts span:nth-child(2) {
+    left: 25%;
+    animation-duration: 15s;
+    animation-delay: 5s;
+}
+
+.floating-hearts span:nth-child(3) {
+    left: 38%;
+    animation-duration: 11s;
+    animation-delay: 1s;
+}
+
+.floating-hearts span:nth-child(4) {
+    left: 55%;
+    animation-duration: 14s;
+    animation-delay: 6s;
+}
+
+.floating-hearts span:nth-child(5) {
+    left: 68%;
+    animation-duration: 13s;
+    animation-delay: 3s;
+}
+
+.floating-hearts span:nth-child(6) {
+    left: 78%;
+    animation-duration: 16s;
+    animation-delay: 8s;
+}
+
+.floating-hearts span:nth-child(7) {
+    left: 88%;
+    animation-duration: 12s;
+    animation-delay: 4s;
+}
+
+.floating-hearts span:nth-child(8) {
+    left: 45%;
+    animation-duration: 17s;
+    animation-delay: 9s;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0) scale(0.7);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(-110vh) scale(1.15);
+        opacity: 0;
+    }
+}
 
 /* =========================================================
    VERY SMALL PHONES
