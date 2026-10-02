@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Happy Monthsary ❤️</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <!-- =====================================================
+         MAIN EXPERIENCE
+    ====================================================== -->
+
+    <main class="page" id="page">
+
+        <!-- Soft background glow -->
+        <div class="background-glow"></div>
+
+
+        <!-- =================================================
+             TITLE
+        ================================================== -->
+
+        <header class="title">
+
+            <h1>
+                Happy Monthsary, My Love ❤️
+            </h1>
+
+            <p>
+                A LITTLE SURPRISE FOR YOU
+            </p>
+
+        </header>
+
+
+        <!-- =================================================
+             BUTTERFLY 1
+             
+             Replace butterfly1.png with your image.
+        ================================================== -->
+
+        <div class="butterfly butterfly-left">
+
+            <img
+                src="butterfly1.png"
+                alt=""
+                draggable="false"
+            >
+
+        </div>
+
+
+        <!-- =================================================
+             BUTTERFLY 2
+             
+             Replace butterfly2.png with your image.
+        ================================================== -->
+
+        <div class="butterfly butterfly-right">
+
+            <img
+                src="butterfly2.png"
+                alt=""
+                draggable="false"
+            >
+
+        </div>
+
+
+        <!-- =================================================
+             COUPLE SILHOUETTE
+             
+             Put your silhouette image here:
+             couple-silhouette.png
+        ================================================== -->
+
+        <img
+            src="couple-silhouette.png"
+            class="couple-silhouette"
+            alt="A couple embracing"
+            draggable="false"
+        >
+
+
+        <!-- =================================================
+             ENVELOPE
+        ================================================== -->
+
+        <section class="envelope-area">
+
+            <button
+                class="envelope-button"
+                id="openEnvelope"
+                type="button"
+                aria-label="Open my love letter"
+            >
+
+                <div class="envelope">
+
+                    <!-- Envelope flap -->
+                    <div class="envelope-flap"></div>
+
+                    <!-- Small decorative hearts -->
+                    <span class="small-heart heart-one">
+                        ♡
+                    </span>
+
+                    <span class="small-heart heart-two">
+                        ♡
+                    </span>
+
+                    <!-- Heart seal -->
+                    <div class="heart-seal">
+                        ♥
+                    </div>
+
+                </div>
+
+                <p class="open-text">
+                    Tap to open my letter 💌
+                </p>
+
+            </button>
+
+        </section>
+
+
+        <!-- =================================================
+             LETTER OVERLAY
+        ================================================== -->
+
+        <div
+            class="letter-overlay"
+            id="letterOverlay"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="letterTitle"
+        >
+
+            <article class="letter">
+
+                <h2
+                    class="letter-heading"
+                    id="letterTitle"
+                >
+                    To My Love 💗
+                </h2>
+
+
+                <!--
+                    ONLY THIS SECTION SCROLLS
+                -->
+
+                <div class="letter-content">
+
+                    <p>
+                        My love,
+                    </p>
+
+                    <p>
+                        Another month with you, and somehow
+                        my heart still finds new reasons to
+                        fall for you all over again.
+                    </p>
+
+                    <p>
+                        Thank you for every little moment —
+                        every conversation, every laugh, every
+                        silly thing, and every memory we've
+                        created together.
+                    </p>
+
+                    <p>
+                        You have this beautiful way of making
+                        ordinary days feel a little more
+                        special.
+                    </p>
+
+                    <p>
+                        I don't know what every tomorrow will
+                        bring, but I know I want to keep
+                        making memories with you, one little
+                        moment at a time.
+                    </p>
+
+                    <p>
+                        And if I could give you one thing
+                        today, it would simply be a reminder
+                        of how much you mean to me.
+                    </p>
+
+                    <p class="letter-highlight">
+                        You are loved.<br>
+                        You are special.<br>
+                        And you mean so much to me. ❤️
+                    </p>
+
+                    <p>
+                        Happy Monthsary, sweetheart.
+                    </p>
+
+                    <p>
+                        Here's to us, to all the memories
+                        we've already made, and to all the
+                        beautiful moments still waiting for us.
+                    </p>
+
+                    <p>
+                        I love you. 🦋
+                    </p>
+
+                    <p class="signature">
+                        Forever yours,<br>
+                        ❤️
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="close-letter"
+                    id="closeLetter"
+                    type="button"
+                >
+                    Close the letter ❤️
+                </button>
+
+            </article>
+
+        </div>
+
+
+        <!-- =================================================
+             FINAL "I LOVE YOU" SCREEN
+        ================================================== -->
+
+        <div
+            class="love-screen"
+            id="loveScreen"
+        >
+
+            <h2 class="love-title">
+                I Love You ❤️
+            </h2>
+
+            <p class="love-subtitle">
+                TODAY, TOMORROW & EVERY DAY
+            </p>
+
+            <button
+                class="replay-button"
+                id="replayButton"
+                type="button"
+            >
+                Replay the surprise ↻
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             MUSIC CONTROL
+        ================================================== -->
+
+        <button
+            class="music-control"
+            id="musicControl"
+            type="button"
+            aria-label="Pause music"
+        >
+            ♫
+        </button>
+
+
+        <!-- =================================================
+             MUSIC
+             
+             Put your music file in the same folder.
+             Name it music.mp3
+        ================================================== -->
+
+        <audio
+            id="backgroundMusic"
+            loop
+            preload="auto"
+        >
+
+            <source
+                src="music.mp3"
+                type="audio/mpeg"
+            >
+
+        </audio>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

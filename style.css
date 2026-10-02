@@ -1,0 +1,1314 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    overflow-x: hidden;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   MAIN PAGE
+========================================================= */
+
+.page {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+    min-height: 100svh;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+    radial-gradient(
+        circle at 50% 45%,
+        rgba(255, 190, 215, 0.25),
+        transparent 32%
+    ),
+
+    radial-gradient(
+        circle at 20% 20%,
+        rgba(255, 190, 215, 0.12),
+        transparent 25%
+    ),
+
+    linear-gradient(
+        135deg,
+        #ffd0df 0%,
+        #f5a5c3 40%,
+        #e989b0 70%,
+        #dc79a5 100%
+    );
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.background-glow {
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    top: 48%;
+    left: 50%;
+
+    transform: translate(
+        -50%,
+        -50%
+    );
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.25);
+
+    filter: blur(75px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.title {
+    position: absolute;
+
+    top: clamp(
+        30px,
+        7vh,
+        65px
+    );
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 90%;
+
+    text-align: center;
+
+    color: #71304c;
+
+    z-index: 8;
+
+    pointer-events: none;
+}
+
+.title h1 {
+    font-size:
+        clamp(
+            23px,
+            4vw,
+            36px
+        );
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 3px 15px
+        rgba(255, 255, 255, 0.8);
+}
+
+.title p {
+    margin-top: 7px;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        clamp(
+            9px,
+            1.5vw,
+            13px
+        );
+
+    letter-spacing: 3px;
+
+    opacity: 0.65;
+}
+
+
+/* =========================================================
+   BUTTERFLIES
+========================================================= */
+
+.butterfly {
+    position: absolute;
+
+    width: 58px;
+    height: auto;
+
+    z-index: 5;
+
+    pointer-events: none;
+    user-select: none;
+
+    will-change: transform;
+
+    /*
+        IMPORTANT:
+        JavaScript controls the movement.
+        There is NO CSS animation here.
+    */
+}
+
+.butterfly img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    pointer-events: none;
+    user-select: none;
+
+    /*
+        Gentle visual flutter.
+    */
+    animation: gentleFlutter 0.7s ease-in-out infinite alternate;
+}
+
+
+/* LEFT BUTTERFLY */
+
+.butterfly-left {
+    left: 6%;
+    top: 30%;
+}
+
+
+/* RIGHT BUTTERFLY */
+
+.butterfly-right {
+    right: 7%;
+    top: 34%;
+}
+
+
+/* =========================================================
+   GENTLE WING MOVEMENT
+========================================================= */
+
+@keyframes gentleFlutter {
+
+    0% {
+        transform:
+            rotate(-3deg)
+            scaleX(1);
+    }
+
+    50% {
+        transform:
+            rotate(2deg)
+            scaleX(0.88);
+    }
+
+    100% {
+        transform:
+            rotate(-2deg)
+            scaleX(1);
+    }
+}
+
+
+/* =========================================================
+   COUPLE SILHOUETTE
+========================================================= */
+
+.couple-silhouette {
+    position: absolute;
+
+    left: 50%;
+
+    /*
+        Slightly lower than the previous version.
+        This keeps the title clear.
+    */
+
+    bottom: 4vh;
+
+    transform:
+        translateX(-50%);
+
+    /*
+        Smaller than the previous version so
+        the envelope remains the focal point.
+    */
+
+    width:
+        min(
+            370px,
+            70vw
+        );
+
+    height: auto;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    /*
+        IMPORTANT:
+
+        The new silhouette should feel soft
+        rather than almost-black.
+    */
+
+    opacity: 0.62;
+
+    filter:
+        saturate(0.72)
+        brightness(1.18)
+        drop-shadow(
+            0 8px 22px
+            rgba(105, 40, 75, 0.12)
+        );
+}
+
+
+/* =========================================================
+   ENVELOPE AREA
+========================================================= */
+
+.envelope-area {
+    position: relative;
+
+    z-index: 10;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 65px;
+}
+
+
+/* =========================================================
+   ENVELOPE BUTTON
+========================================================= */
+
+.envelope-button {
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    -webkit-tap-highlight-color:
+        transparent;
+
+    transition:
+        transform 0.35s ease;
+}
+
+.envelope-button:hover {
+    transform:
+        translateY(-7px);
+}
+
+.envelope-button:active {
+    transform:
+        translateY(-2px)
+        scale(0.98);
+}
+
+.envelope-button:focus-visible {
+    outline:
+        3px solid
+        rgba(255, 255, 255, 0.8);
+
+    outline-offset: 10px;
+
+    border-radius: 12px;
+}
+
+
+/* =========================================================
+   ENVELOPE
+========================================================= */
+
+.envelope {
+    position: relative;
+
+    width: 220px;
+    height: 145px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffafd,
+            #fff3f8
+        );
+
+    border:
+        2px solid
+        #d986a5;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 20px 35px
+        rgba(91, 27, 55, 0.22);
+
+    overflow: hidden;
+}
+
+
+/* Envelope folds */
+
+.envelope::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            35deg,
+            transparent 49%,
+            #edb3c8 50%,
+            transparent 51%
+        ),
+
+        linear-gradient(
+            -35deg,
+            transparent 49%,
+            #edb3c8 50%,
+            transparent 51%
+        );
+
+    opacity: 0.85;
+}
+
+
+/* =========================================================
+   ENVELOPE FLAP
+========================================================= */
+
+.envelope-flap {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 83px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffeaf2,
+            #ffe0eb
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 100%
+        );
+
+    border-bottom:
+        1px solid
+        #d985a5;
+
+    z-index: 3;
+
+    transform-origin:
+        top center;
+
+    transition:
+        transform 0.6s ease;
+}
+
+
+/* =========================================================
+   HEART SEAL
+========================================================= */
+
+.heart-seal {
+    position: absolute;
+
+    left: 50%;
+    top: 65px;
+
+    transform:
+        translateX(-50%);
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #d85b87,
+            #b83e6c
+        );
+
+    color: white;
+
+    font-size: 19px;
+
+    box-shadow:
+        0 5px 12px
+        rgba(112, 31, 64, 0.22);
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   SMALL HEARTS
+========================================================= */
+
+.small-heart {
+    position: absolute;
+
+    color: #d8759c;
+
+    font-size: 18px;
+
+    z-index: 6;
+
+    opacity: 0.7;
+
+    animation:
+        heartFloat
+        3s
+        ease-in-out
+        infinite;
+}
+
+.heart-one {
+    left: 25px;
+    top: 70px;
+}
+
+.heart-two {
+    right: 25px;
+    top: 43px;
+
+    animation-delay:
+        -1.2s;
+}
+
+@keyframes heartFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-7px);
+    }
+}
+
+
+/* =========================================================
+   ENVELOPE TEXT
+========================================================= */
+
+.open-text {
+    margin-top: 17px;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    color: #773050;
+
+    opacity: 0.82;
+}
+
+
+/* =========================================================
+   LETTER OVERLAY
+========================================================= */
+
+.letter-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(75, 21, 48, 0.28);
+
+    backdrop-filter:
+        blur(7px);
+
+    -webkit-backdrop-filter:
+        blur(7px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.45s ease,
+        visibility 0.45s ease;
+}
+
+.letter-overlay.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* =========================================================
+   LETTER
+========================================================= */
+
+.letter {
+    position: relative;
+
+    width:
+        min(
+            480px,
+            94vw
+        );
+
+    max-height:
+        88vh;
+
+    max-height:
+        88svh;
+
+    padding:
+        30px
+        28px
+        22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffaf4,
+            #fff7f0
+        );
+
+    border-radius: 9px;
+
+    border:
+        1px solid
+        #e6b6c7;
+
+    box-shadow:
+        0 30px 70px
+        rgba(63, 17, 40, 0.32);
+
+    transform:
+        translateY(40px)
+        scale(0.85);
+
+    transition:
+        transform
+        0.55s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        );
+}
+
+.letter-overlay.active .letter {
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* Inner border */
+
+.letter::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 10px;
+
+    border:
+        1px solid
+        #e4bccb;
+
+    border-radius: 5px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   LETTER TITLE
+========================================================= */
+
+.letter-heading {
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    margin-bottom: 15px;
+
+    color: #9c3d65;
+
+    font-size: 27px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   SCROLLABLE LETTER CONTENT
+========================================================= */
+
+.letter-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-height:
+        53vh;
+
+    max-height:
+        53svh;
+
+    overflow-y: auto;
+
+    padding:
+        4px
+        13px
+        5px;
+
+    color: #593344;
+
+    font-family:
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        #dda0b8
+        transparent;
+}
+
+.letter-content::-webkit-scrollbar {
+    width: 5px;
+}
+
+.letter-content::-webkit-scrollbar-thumb {
+    background:
+        #dda0b8;
+
+    border-radius:
+        10px;
+}
+
+.letter-content p {
+    margin-bottom: 15px;
+}
+
+.letter-highlight {
+    text-align: center;
+
+    color: #a13c67;
+
+    font-size: 20px;
+}
+
+.signature {
+    text-align: right;
+}
+
+
+/* =========================================================
+   CLOSE LETTER
+========================================================= */
+
+.close-letter {
+    position: relative;
+
+    z-index: 5;
+
+    display: block;
+
+    margin:
+        18px auto 0;
+
+    padding:
+        11px 25px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d45b87,
+            #bb416d
+        );
+
+    color: white;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 14px
+        rgba(126, 37, 73, 0.23);
+
+    transition:
+        transform 0.25s ease;
+}
+
+.close-letter:hover {
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   PETALS
+========================================================= */
+
+.petal {
+    position: fixed;
+
+    top: -40px;
+
+    z-index: 150;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    animation:
+        petalFall
+        linear
+        forwards;
+}
+
+@keyframes petalFall {
+
+    0% {
+        transform:
+            translate3d(
+                0,
+                -30px,
+                0
+            )
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translate3d(
+                var(--drift),
+                110vh,
+                0
+            )
+            rotate(620deg);
+
+        opacity: 0.12;
+    }
+}
+
+
+/* =========================================================
+   FINAL LOVE SCREEN
+========================================================= */
+
+.love-screen {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 200;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    padding: 20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 222, 235, 0.80),
+            rgba(230, 124, 163, 0.20)
+        );
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.7s ease,
+        visibility 0.7s ease;
+}
+
+.love-screen.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* =========================================================
+   I LOVE YOU
+========================================================= */
+
+.love-title {
+    margin: 0;
+
+    color: #a52f62;
+
+    font-size:
+        clamp(
+            46px,
+            10vw,
+            90px
+        );
+
+    font-weight: 600;
+
+    text-shadow:
+        0 5px 25px
+        rgba(255, 255, 255, 0.9);
+
+    animation:
+        loveAppear
+        1.2s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        );
+}
+
+.love-subtitle {
+    margin-top: 10px;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        clamp(
+            12px,
+            2vw,
+            16px
+        );
+
+    letter-spacing: 3px;
+
+    color: #773050;
+
+    animation:
+        fadeIn
+        2s ease;
+}
+
+
+/* =========================================================
+   REPLAY
+========================================================= */
+
+.replay-button {
+    margin-top: 25px;
+
+    padding:
+        10px 20px;
+
+    border:
+        1px solid
+        rgba(128, 43, 79, 0.25);
+
+    border-radius: 30px;
+
+    background:
+        rgba(255, 255, 255, 0.65);
+
+    color: #813456;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.replay-button:hover {
+    transform:
+        translateY(-2px);
+
+    background:
+        rgba(255, 255, 255, 0.9);
+}
+
+
+/* =========================================================
+   LOVE ANIMATIONS
+========================================================= */
+
+@keyframes loveAppear {
+
+    0% {
+        transform:
+            scale(0.25);
+
+        opacity: 0;
+    }
+
+    65% {
+        transform:
+            scale(1.12);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            scale(1);
+    }
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   MUSIC CONTROL
+========================================================= */
+
+.music-control {
+    position: fixed;
+
+    right: 18px;
+    bottom: 18px;
+
+    z-index: 300;
+
+    width: 43px;
+    height: 43px;
+
+    border:
+        1px solid
+        rgba(115, 37, 70, 0.18);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.65);
+
+    color: #873456;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    backdrop-filter:
+        blur(5px);
+
+    box-shadow:
+        0 5px 15px
+        rgba(85, 24, 52, 0.12);
+}
+
+.music-control.visible {
+    display: flex;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .page {
+        min-height: 100svh;
+    }
+
+
+    /* Title */
+
+    .title {
+        top: 25px;
+    }
+
+    .title h1 {
+        font-size: 22px;
+    }
+
+    .title p {
+        font-size: 9px;
+
+        letter-spacing: 2px;
+    }
+
+
+    /* Butterflies */
+
+    .butterfly {
+        width: 40px;
+    }
+
+    .butterfly-left {
+        left: 3%;
+        top: 29%;
+    }
+
+    .butterfly-right {
+        right: 3%;
+        top: 35%;
+    }
+
+    .butterfly-left {
+    animation-duration: 11s;
+}
+
+.butterfly-right {
+    animation-duration: 12s;
+}
+
+
+    /* Couple */
+
+    .couple-silhouette {
+        width:
+            min(
+                330px,
+                82vw
+            );
+
+        bottom: 5vh;
+
+        opacity: 0.58;
+    }
+
+
+    /* Envelope */
+
+    .envelope-area {
+        margin-top: 55px;
+    }
+
+    .envelope {
+        width: 190px;
+        height: 126px;
+    }
+
+    .envelope-flap {
+        height: 73px;
+    }
+
+    .heart-seal {
+        top: 55px;
+
+        width: 37px;
+        height: 37px;
+
+        font-size: 17px;
+    }
+
+    .heart-one {
+        left: 20px;
+        top: 60px;
+    }
+
+    .heart-two {
+        right: 20px;
+        top: 38px;
+    }
+
+    .open-text {
+        font-size: 11px;
+    }
+
+
+    /* Letter */
+
+    .letter {
+        width: 94vw;
+
+        max-height:
+            88svh;
+
+        padding:
+            26px
+            20px
+            18px;
+    }
+
+    .letter-heading {
+        font-size: 24px;
+    }
+
+    .letter-content {
+        max-height:
+            55svh;
+
+        padding:
+            3px 9px;
+    }
+
+    .letter-content p {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+
+    /* Final */
+
+    .love-title {
+        font-size: 52px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .title h1 {
+        font-size: 20px;
+    }
+
+    .couple-silhouette {
+        width: 82vw;
+    }
+
+    .envelope {
+        width: 175px;
+        height: 116px;
+    }
+
+    .envelope-flap {
+        height: 68px;
+    }
+
+    .heart-seal {
+        top: 51px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .butterfly img,
+    .small-heart,
+    .love-title {
+        animation: none;
+    }
+
+    .envelope-button,
+    .letter {
+        transition: none;
+    }
+}
