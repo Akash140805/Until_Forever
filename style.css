@@ -709,17 +709,22 @@ button {
 
     z-index: 2;
 
-    text-align: center;
+    text-align: left;
 
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 
     color: #9c3d65;
 
-    font-size: 27px;
+    font-size: 22px;
 
     font-weight: 600;
 }
 
+.letter-ending {
+    margin-top: 28px;
+    font-size: 16px;
+    color: #773050;
+}
 
 /* =========================================================
    SCROLLABLE LETTER CONTENT
@@ -945,9 +950,11 @@ button {
 
     color: #a52f62;
 
+    font-family: 'Dancing Script', cursive;
+
     font-size:
         clamp(
-            46px,
+            50px,
             10vw,
             90px
         );
